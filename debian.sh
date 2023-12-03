@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get install -y git
+apt-get update && apt-get install -y git
 
 git clone https://github.com/taishingi/os && cd os || exit 1
 

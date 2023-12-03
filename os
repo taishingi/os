@@ -8,10 +8,10 @@ function fedora() {
 
     case "$1" in
     install)
-        sudo dnf install -y "${2}"
+        sudo dnf5 install -y "${2}"
         ;;
     remove)
-        sudo dnf remove -y "${2}"
+        sudo dnf5 remove -y "${2}"
         ;;
     default) exit 1 ;;
     esac
