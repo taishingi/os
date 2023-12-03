@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -S --no-confirm git
+pacman -S --noconfirm git
 
 git clone https://github.com/taishingi/os && cd os || exit 1
 
