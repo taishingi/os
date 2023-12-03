@@ -13,6 +13,13 @@ function fedora() {
     remove)
         dnf5 remove -y "${2}"
         ;;
+    tree)
+        dnf5 repoquery --requires "{2}"
+        ;;
+    list)
+        dnf5 list "--${2}"
+        ;;
+
     default) exit 1 ;;
     esac
 }
@@ -25,6 +32,12 @@ function debian() {
         ;;
     remove)
         apt-get remove -y "${2}"
+        ;;
+    tree)
+        apt-get depends "${2}"
+        ;;
+    list)
+        apt-get list "--${2}"
         ;;
     default) exit 1 ;;
 
@@ -39,6 +52,12 @@ function arch() {
         ;;
     remove)
         pacman -Rcs --noconfirm "${2}"
+        ;;
+    list)
+        pacman -Sl "${2}"
+        ;;
+    tree)
+        pactree "${2}"
         ;;
     default) exit 1 ;;
 
