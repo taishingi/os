@@ -6,5 +6,5 @@ pacman -S --noconfirm git
 
 git clone https://github.com/taishingi/os && cd os || exit 1
 
-./os install vim
-./os remove vim
+./os "install" "vim"
+./os "remove" "vim"
