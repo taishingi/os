@@ -1,8 +1,8 @@
 #!/bin/bash
 
-IS_ARCH=$(test -f /etc/arch-release)
-IS_DEBIAN=$(test -f /etc/debian_version)
-IS_FEDORA=$(test -f /etc/fedora-release)
+ARCH="/etc/arch-release"
+DEBIAN="/etc/debian_version"
+FEDORA="/etc/fedora-release"
 
 function fedora() {
 
@@ -47,11 +47,11 @@ function arch() {
 
 function main() {
 
-    if [ "${IS_FEDORA}" ]; then
+    if [ -f "${FEDORA}" ]; then
         fedora "${1}" "${2}"
-    elif [ "${IS_ARCH}" ]; then
+    elif [ -f "${ARCH}" ]; then
         arch "${1}" "${2}"
-    elif [ "${IS_DEBIAN}" ]; then
+    elif [ -f "${DEBIAN}" ]; then
         debian "${1}" "${2}"
     else
         exit 1
