@@ -16,7 +16,7 @@ function fedora() {
     tree)
         dnf5 repoquery --requires "{2}"
         ;;
-    list)
+    list)   
         dnf5 list "--${2}"
         ;;
 
@@ -34,7 +34,7 @@ function debian() {
         apt-get remove -y "${2}"
         ;;
     tree)
-        apt-get depends "${2}"
+        apt-cache rdepends --installed "${2}"
         ;;
     list)
         apt-get list "--${2}"
