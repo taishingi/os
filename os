@@ -35,7 +35,7 @@ function arch() {
 
     case "$1" in
     install)
-        sudo pacman -Su --noconfirm "${2}"
+        sudo pacman -Syu --noconfirm "${2}"
         ;;
     remove)
         sudo pacman -Rcs --noconfirm "${2}"
