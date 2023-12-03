@@ -8,10 +8,10 @@ function fedora() {
 
     case "$1" in
     install)
-        sudo dnf5 install -y "${2}"
+        dnf5 install -y "${2}"
         ;;
     remove)
-        sudo dnf5 remove -y "${2}"
+        dnf5 remove -y "${2}"
         ;;
     default) exit 1 ;;
     esac
@@ -21,10 +21,10 @@ function debian() {
 
     case "$1" in
     install)
-        sudo apt-get install -y "${2}"
+        apt-get install -y "${2}"
         ;;
     remove)
-        sudo apt-get remove -y "${2}"
+        apt-get remove -y "${2}"
         ;;
     default) exit 1 ;;
 
@@ -35,10 +35,10 @@ function arch() {
 
     case "$1" in
     install)
-        sudo pacman -Syu --noconfirm "${2}"
+        pacman -Syu --noconfirm "${2}"
         ;;
     remove)
-        sudo pacman -Rcs --noconfirm "${2}"
+        pacman -Rcs --noconfirm "${2}"
         ;;
     default) exit 1 ;;
 
