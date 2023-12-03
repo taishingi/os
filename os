@@ -34,7 +34,7 @@ function debian() {
         apt-get remove -y "${2}"
         ;;
     tree)
-        apt-cache rdepends --installed "${2}"
+        apt-rdepends "${2}"
         ;;
     list)
         apt-get list "--${2}"
