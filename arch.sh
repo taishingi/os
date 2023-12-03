@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -Syyu
+pacman -Syyu --noconfirm
 
 pacman -S --noconfirm git
 
